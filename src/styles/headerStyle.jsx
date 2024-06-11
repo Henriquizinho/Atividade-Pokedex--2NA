@@ -38,6 +38,16 @@ export const HeaderContainer = styled.div`
             transform: rotate(360deg);
         }
     }
+
+    @media(max-width: 767px) {
+        .sidebar {
+            display: none;
+        }
+    }
+
+    @media(max-width: 375px){
+        height: 120px;
+    }
 `
 export const Navigation = styled.nav`
     width: 70%;
@@ -50,6 +60,19 @@ export const Navigation = styled.nav`
     justify-content: space-between;
     font-size: 16px;
     color: #fff;
+
+    @media(max-width: 767px) {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        right: 0;
+    }
+
+    @media(max-width: 375px){
+        flex-direction: column;
+        height: 100px;
+    }
 `
 
 export const RightMenu = styled.div`
@@ -84,7 +107,7 @@ export const SearchBar = styled.div`
     input {
         width: 100%;
         height: calc(100% - 4px);
-        margin: 4px;
+        margin: 4px 4px 4px 6px;
         border: none;
         outline: none;
         color: #707070;

@@ -23,7 +23,7 @@ function Header() {
                     </S.SearchBar>
                     <S.SwitchButton>
                         <input type="checkbox" />
-                        <span class="slider" />
+                        <span className="slider" />
                     </S.SwitchButton>
                 </S.RightMenu>
             </S.Navigation>
