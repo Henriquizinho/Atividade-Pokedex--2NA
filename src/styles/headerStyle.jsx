@@ -50,11 +50,11 @@ export const HeaderContainer = styled.div`
     }
 `
 export const Navigation = styled.nav`
-    width: 70%;
+    width: 64%;
     height: 80px;
     position: absolute;
     bottom: 0;
-    right: 6%;
+    right: 12%;
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -9,11 +9,6 @@ export default createGlobalStyle`
     font-weight: 400;
 }
 
-body {
-    min-height: 100vh;
-    width: 100%;
-}
-
 a {
     text-decoration: none;
     color: #fff;

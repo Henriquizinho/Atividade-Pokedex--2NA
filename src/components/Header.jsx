@@ -9,8 +9,6 @@ import PokeballIcon from '../../public/pokeball-icon.svg'
 
 function Header() {
     return (
-
-
         <S.HeaderContainer>
             <div className="sidebar"><a href='#'><img src={PokeballIcon} width={50} height={50} /></a></div>
             <div className="topbar" />
