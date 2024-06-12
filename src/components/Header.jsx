@@ -4,7 +4,7 @@ import * as S from '../styles/headerStyle'
 import { TiHome } from "react-icons/ti";
 import { IoSearchSharp } from "react-icons/io5";
 
-import PokeballIcon from '../../public/pokeball-icon.svg'
+import PokeballIcon from '/pokeball-icon.svg'
 
 
 function Header() {
