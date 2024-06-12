@@ -1,6 +1,6 @@
 import GlobalStyle from "./GlobalStyle"
 import Header from "./components/Header"
-import MainContainer from "./components/MainContainer"
+import HomeContainer from "./components/HomeContainer"
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
         <>
             <GlobalStyle />
             <Header />
-            <MainContainer />
+            <HomeContainer />
         </>
     )
 }
