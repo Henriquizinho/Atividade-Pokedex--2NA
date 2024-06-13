@@ -2,10 +2,13 @@ import { styled } from 'styled-components'
 
 export const BodyContainer = styled.main`
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
 
     main {
+        min-height: calc(100vh - 160px);
+        height: 100%;
         width: 68%;
         background-color: #E9EAEA;
         display: flex;
@@ -28,6 +31,12 @@ export const BodyContainer = styled.main`
         gap: 40px;
         flex-wrap: wrap;
         margin-bottom: 40px;
+    }
+
+    @media(max-width: 376px){
+        main {
+            width: 90%;
+        }
     }
 `
 
