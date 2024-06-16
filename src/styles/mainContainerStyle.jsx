@@ -63,6 +63,9 @@ export const Card = styled.div`
         height: 254px;
         border: 2px solid #707070;
         background-color: #FFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .cardInfo {
