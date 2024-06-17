@@ -17,7 +17,7 @@ function Header({ setSearch }) {
             <div className="sidebar"><a href='#'><img src={PokeballIcon} width={50} height={50} /></a></div>
             <div className="topbar" />
             <S.Navigation>
-                <a href='https://google.com'><TiHome /> Página Inicial</a>
+                <a href='#'><TiHome /> Página Inicial</a>
                 <S.RightMenu>
                     <S.SearchBar>
                         <div className="iconSearch"><IoSearchSharp /></div>
