@@ -7,7 +7,11 @@ import { IoSearchSharp } from "react-icons/io5";
 import PokeballIcon from '/pokeball-icon.svg'
 
 
-function Header() {
+function Header({ setSearch }) {
+    const handleInputSearch = (e) => {
+        setSearch(e.target.value)
+    }
+
     return (
         <S.HeaderContainer>
             <div className="sidebar"><a href='#'><img src={PokeballIcon} width={50} height={50} /></a></div>
@@ -17,7 +21,7 @@ function Header() {
                 <S.RightMenu>
                     <S.SearchBar>
                         <div className="iconSearch"><IoSearchSharp /></div>
-                        <input type="text" name="search" placeholder='Procurar...' />
+                        <input type="text" name="search" placeholder='Procurar...' onChange={handleInputSearch}/>
                     </S.SearchBar>
                     <S.SwitchButton>
                         <input type="checkbox" />

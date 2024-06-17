@@ -5,26 +5,29 @@ import * as S from '../styles/mainContainerStyle'
 
 import BlackStripes from '/black-stripes.svg'
 
-function HomeContainer() {
+function HomeContainer({ search }) {
     const [quantity, setQuantity] = useState(10)
     const [pokemons, setPokemons] = useState([])
 
 
     useEffect(() => {
         const getPokemons = async () => {
-            const data = await fetchPokemons(quantity)
-            const urls = data.results.map(pokemon => pokemon.url);
+            const data = await fetchPokemons()
 
-            const pokemonDetails = await Promise.all(urls.slice(0, quantity).map(async (url) => {
-                const res = await fetch(url);
-                return res.json();
-            }));
+            if(search === '') {
+                setPokemons(data);
+            } else {
+                setPokemons(data.filter(pokemon => 
+                    pokemon.name && pokemon.name.toLowerCase().includes(search.toLowerCase())
+                ))
+            }
 
-            setPokemons(pokemonDetails);
         }
 
         getPokemons()
-    }, [quantity])
+    }, [search])
+
+    const limitedPokemons = pokemons.slice(0, quantity);
 
 
     function capitalizeFirstLetter(string) {
@@ -36,7 +39,7 @@ function HomeContainer() {
             <main>
                 <h1>Listagem de Pokémons</h1>
                 <div className="displayCards">
-                    {pokemons.map((pokemon, index) => (
+                    {limitedPokemons.map((pokemon, index) => (
                         <S.Card key={index}>
                             <div>
                                 <div className="redDot" style={{ width: 6, height: 6, margin: '0 8px' }}></div>
