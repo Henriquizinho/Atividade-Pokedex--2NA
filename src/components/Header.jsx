@@ -1,4 +1,4 @@
-import React from 'react'
+import { useContext } from 'react'
 import * as S from '../styles/headerStyle'
 
 import { TiHome } from "react-icons/ti";
@@ -6,11 +6,15 @@ import { IoSearchSharp } from "react-icons/io5";
 
 import PokeballIcon from '/pokeball-icon.svg'
 
+import { ThemeContext } from '../contexts/ThemeContext'
+
 
 function Header({ setSearch }) {
     const handleInputSearch = (e) => {
         setSearch(e.target.value)
     }
+
+    const { theme, toggleTheme } = useContext(ThemeContext)
 
     return (
         <S.HeaderContainer>
@@ -24,7 +28,7 @@ function Header({ setSearch }) {
                         <input type="text" name="search" placeholder='Procurar...' onChange={handleInputSearch}/>
                     </S.SearchBar>
                     <S.SwitchButton>
-                        <input type="checkbox" />
+                        <input type="checkbox" onChange={toggleTheme}/>
                         <span className="slider" />
                     </S.SwitchButton>
                 </S.RightMenu>
