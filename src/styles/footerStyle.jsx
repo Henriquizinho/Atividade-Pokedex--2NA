@@ -19,4 +19,13 @@ export const Footer = styled.footer`
         text-decoration: underline;
         font-style: italic;
     }
+
+    @media(max-width: 676px){
+        justify-content: center;
+        text-align: center;
+
+        img {
+            display: none
+        }
+    }
 `
