@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { FaArrowUp } from "react-icons/fa";
+
 import { fetchPokemons } from '../services/fetchAPI'
 
 import * as S from '../styles/homeContainerStyle'
@@ -8,6 +10,7 @@ import BlackStripes from '/black-stripes.svg'
 function HomeContainer({ search }) {
     const [quantity, setQuantity] = useState(10)
     const [pokemons, setPokemons] = useState([])
+    const [isVisible, setIsVisible] = useState(false)
 
 
     useEffect(() => {
@@ -27,11 +30,33 @@ function HomeContainer({ search }) {
         getPokemons()
     }, [search])
 
+    useEffect(() => {
+        window.addEventListener('scroll', toggleVisibility);
+        return () => {
+            window.removeEventListener('scroll', toggleVisibility);
+        };
+    }, []);
+
     const limitedPokemons = pokemons.slice(0, quantity);
 
 
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    }
+
+    function toggleVisibility() {
+        if (window.scrollY > 400) {
+            setIsVisible(true)
+        } else {
+            setIsVisible(false)
+        }
     }
 
     if (pokemons.length === 0) {
@@ -66,6 +91,8 @@ function HomeContainer({ search }) {
                 </div>
                 <S.LoadButton onClick={() => setQuantity(quantity + 10)}>Carregar +</S.LoadButton>
             </main>
+
+            <S.ScrollButton onClick={scrollToTop} isVisible={isVisible}><FaArrowUp /></S.ScrollButton>
         </S.BodyContainer>
     )
 }
