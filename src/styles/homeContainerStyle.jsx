@@ -68,6 +68,7 @@ export const Card = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
     }
 
     .cardInfo {
@@ -82,6 +83,16 @@ export const Card = styled.div`
         font-size: 16px;
         font-weight: 500;
     }
+`
+
+export const PokemonID = styled.span`
+    position: absolute;
+    bottom: 4px;
+    padding: 4px 8px;
+    background-color: #707070;
+    color: #FFF;
+    border-radius: 4px;
+    font-size: 12px;
 `
 
 export const LoadButton = styled.button`
