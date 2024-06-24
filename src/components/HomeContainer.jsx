@@ -72,7 +72,7 @@ function HomeContainer({ search }) {
     return (
         <S.BodyContainer>
             <main>
-                <h1>Listagem de Pokémons</h1>
+                <h1>Pokémons 1ª Geração</h1>
                 <div className="displayCards">
                     {limitedPokemons.map((pokemon, index) => (
                         <S.Card key={index}>
@@ -89,7 +89,7 @@ function HomeContainer({ search }) {
                         </S.Card>
                     ))}
                 </div>
-                <S.LoadButton onClick={() => setQuantity(quantity + 10)}>Carregar +</S.LoadButton>
+                <S.LoadButton onClick={() => setQuantity(quantity + 10)} disabled={quantity === 150}>{quantity === 150 ? 'Sem mais pokémons' : 'Carregar +'}</S.LoadButton>
             </main>
 
             <S.ScrollButton onClick={scrollToTop} isVisible={isVisible}><FaArrowUp /></S.ScrollButton>

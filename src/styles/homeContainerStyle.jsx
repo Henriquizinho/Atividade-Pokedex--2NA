@@ -105,6 +105,10 @@ export const LoadButton = styled.button`
     font-size: 16px;
     box-shadow: #000 1px 1px;
     cursor: pointer;
+    
+    &:disabled {
+        cursor: not-allowed;
+    }
 
     &:hover{
         transform: translate(1px, 1px);
