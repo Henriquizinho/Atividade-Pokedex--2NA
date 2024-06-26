@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import * as S from '../styles/headerStyle'
+import { Link } from 'react-router-dom'
 
 import { TiHome } from "react-icons/ti";
 import { IoSearchSharp } from "react-icons/io5";
@@ -21,7 +22,7 @@ function Header({ setSearch }) {
             <div className="sidebar"><a href='#'><img src={PokeballIcon} width={50} height={50} /></a></div>
             <div className="topbar" />
             <S.Navigation>
-                <a href='#'><TiHome /> Página Inicial</a>
+                <Link to='/'><TiHome /> Página Inicial</Link>
                 <S.RightMenu>
                     <S.SearchBar>
                         <div className="iconSearch"><IoSearchSharp /></div>

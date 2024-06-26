@@ -5,10 +5,13 @@ import { fetchPokemons } from '../services/fetchAPI'
 import * as S from '../styles/homeContainerStyle'
 import Card from './Card';
 import ScrollButton from './ScrollButton';
+import { useOutletContext, Link } from 'react-router-dom';
 
-function HomeContainer({ search }) {
+function HomeContainer() {
     const [quantity, setQuantity] = useState(10)
     const [pokemons, setPokemons] = useState([])
+
+    const { search } = useOutletContext()
 
 
     useEffect(() => {
@@ -34,7 +37,7 @@ function HomeContainer({ search }) {
         return (
             <S.BodyContainer>
                 <main>
-                    <S.Loader />;
+                    <S.Loader />
                 </main>
             </S.BodyContainer>
         )
@@ -46,15 +49,21 @@ function HomeContainer({ search }) {
                 <h1>Pokémons 1ª Geração</h1>
                 <div className="displayCards">
                     {limitedPokemons.map((pokemon, index) => (
-                        <Card
-                            key={index}
-                            pokeImg={pokemon.sprites.front_default}
-                            pokeName={pokemon.name}
-                            pokeID={pokemon.id}
-                        />
+                        <Link to={`/pokemon/${pokemon.id}`} >
+                            <Card
+                                key={index}
+                                pokeImg={pokemon.sprites.front_default}
+                                pokeName={pokemon.name}
+                                pokeID={pokemon.id}
+                            />
+                        </Link >
                     ))}
                 </div>
-                <S.LoadButton onClick={() => setQuantity(quantity + 10)} disabled={quantity === 150}>{quantity === 150 ? 'Sem mais pokémons' : 'Carregar +'}</S.LoadButton>
+                <S.LoadButton
+                    onClick={() => setQuantity(quantity + 10)}
+                    disabled={quantity === 150}>
+                    {quantity === 150 ? 'Sem mais pokémons' : 'Carregar +'}
+                </S.LoadButton>
             </main>
 
             <ScrollButton />

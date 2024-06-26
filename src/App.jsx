@@ -2,8 +2,10 @@ import { useState } from "react"
 import GlobalStyle from "./GlobalStyle"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
-import HomeContainer from "./components/HomeContainer"
+
 import { CustomThemeProvider } from "./contexts/ThemeContext"
+
+import { Outlet  } from 'react-router-dom'
 
 
 function App() {
@@ -14,7 +16,7 @@ function App() {
             <CustomThemeProvider>
                 <GlobalStyle />
                 <Header setSearch={setSearch} />
-                <HomeContainer search={search} />
+                <Outlet context={{ search }}/>
                 <Footer />
             </CustomThemeProvider>
         </>
