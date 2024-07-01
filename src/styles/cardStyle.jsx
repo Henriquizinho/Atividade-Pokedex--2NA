@@ -10,7 +10,6 @@ export const Card = styled.div`
     align-items: center;
     padding: 0 18px 18px 18px;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 32px 100%, 0 298px);
-    cursor: pointer;
 
     .redDot{
         border-radius: 50%;
