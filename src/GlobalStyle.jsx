@@ -11,6 +11,7 @@ export default createGlobalStyle`
 a {
     text-decoration: none;
     color: #fff;
+    cursor: pointer;
 }
 
 a:hover {

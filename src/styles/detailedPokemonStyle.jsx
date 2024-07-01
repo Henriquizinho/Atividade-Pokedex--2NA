@@ -27,6 +27,18 @@ export const BodyContainer = styled.div`
     }
 `
 
+export const NavPokemon = styled.div`
+    height: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+
+    a {
+        color: ${props => props.theme.mainText};
+    }
+`
+
 export const Type = styled.div`
     text-transform: uppercase;
     margin-top: 12px;

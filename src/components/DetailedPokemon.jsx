@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+
 import * as S from '../styles/detailedPokemonStyle'
 import ScrollButton from './ScrollButton';
 import { fetchPokemonDetailed } from '../services/fetchAPI';
@@ -23,7 +25,7 @@ function DetailedPokemon() {
         }
 
         getPokemon()
-    }, [])
+    }, [id])
 
     useEffect(() => {
         if (pokemon) {
@@ -50,6 +52,11 @@ function DetailedPokemon() {
     return ( 
         < S.BodyContainer >
             <main>
+
+                <S.NavPokemon>
+                <Link to={`/pokemon/${id >= 1 ? pokemon.id : pokemon.id - 1 }`}><FaArrowLeft size={8}/> Pokémon Anterior</Link>
+                <Link to={`/pokemon/${id <= 151 ? pokemon.id : pokemon.id + 1 }`}>Próximo Pokémon <FaArrowRight size={8}/></Link>
+                </S.NavPokemon>
                 <h1>{capitalizeFirstLetter(pokemon.name)}</h1>
 
                 <Card
