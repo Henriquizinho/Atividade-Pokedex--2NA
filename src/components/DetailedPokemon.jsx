@@ -33,7 +33,7 @@ function DetailedPokemon() {
             const typesInPortuguese = translateTypes(typesInEnglish);
             setPortugueseTypes(typesInPortuguese);
         }
-    }, [pokemon]);
+    }, [pokemon, id]);
 
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -54,8 +54,8 @@ function DetailedPokemon() {
             <main>
 
                 <S.NavPokemon>
-                <Link to={`/pokemon/${id >= 1 ? pokemon.id : pokemon.id - 1 }`}><FaArrowLeft size={8}/> Pokémon Anterior</Link>
-                <Link to={`/pokemon/${id <= 151 ? pokemon.id : pokemon.id + 1 }`}>Próximo Pokémon <FaArrowRight size={8}/></Link>
+                <Link to={`/pokemon/${id <= 1 ? pokemon.id : pokemon.id - 1 }`}><FaArrowLeft size={8}/> Pokémon Anterior</Link>
+                <Link to={`/pokemon/${id >= 151 ? pokemon.id : pokemon.id + 1 }`}>Próximo Pokémon <FaArrowRight size={8}/></Link>
                 </S.NavPokemon>
                 <h1>{capitalizeFirstLetter(pokemon.name)}</h1>
 
