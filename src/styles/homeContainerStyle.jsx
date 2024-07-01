@@ -19,7 +19,7 @@ export const BodyContainer = styled.div`
         padding: 12px 68px;
     }
 
-    h1{
+    h1 {
         font-size: 32px;
         font-weight: bold;
         margin-bottom: 12px;

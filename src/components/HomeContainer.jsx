@@ -49,9 +49,8 @@ function HomeContainer() {
                 <h1>Pokémons 1ª Geração</h1>
                 <div className="displayCards">
                     {limitedPokemons.map((pokemon, index) => (
-                        <Link to={`/pokemon/${pokemon.id}`} >
+                        <Link to={`/pokemon/${pokemon.id}`} key={index} >
                             <Card
-                                key={index}
                                 pokeImg={pokemon.sprites.front_default}
                                 pokeName={pokemon.name}
                                 pokeID={pokemon.id}
