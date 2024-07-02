@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 
 import { useParams, Link } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { PiSneakerMoveFill, PiStarFill } from "react-icons/pi"
 
 import * as S from '../styles/detailedPokemonStyle'
 import ScrollButton from './ScrollButton';
@@ -54,7 +55,6 @@ function DetailedPokemon() {
             </S.BodyContainer>
         );
     }
-
     return (
         < S.BodyContainer >
             <main>
@@ -74,7 +74,7 @@ function DetailedPokemon() {
                     <S.SectionInfo>
                         <h1>{capitalizeFirstLetter(pokemon.name)}</h1>
 
-                        <h2>Abilities</h2>
+                        <h2>Abilities <PiStarFill /></h2>
                         {abilitiesData.map((element, index) => {
                             return (
                                 <ul key={index}>{capitalizeFirstLetter(element.name)}
@@ -93,6 +93,22 @@ function DetailedPokemon() {
                         </S.Type>
                     </S.SectionInfo>
                 </S.SectionDetails>
+
+                <S.SectionMoves>
+                    <h2>Moves list  <PiSneakerMoveFill /></h2>
+
+                    <div className="movesContainer">
+                        <ul>
+                            {pokemon.moves.map((element, index) => {
+                                console.log(element);
+                                return (
+                                    <li key={index}>{capitalizeFirstLetter(element.move.name)}</li>
+                                )
+                            }
+                            )}
+                        </ul>
+                    </div>
+                </S.SectionMoves>
             </main>
 
             <ScrollButton />

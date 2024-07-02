@@ -47,9 +47,11 @@ export const SectionDetails = styled.section`
     align-items: center;
     gap: 12px;
     flex-wrap: wrap;
+    margin-bottom: 24px;
 `
 
 export const SectionInfo = styled.section`
+    max-width: 800px;
     min-width: 280px;
     border: 2px solid ${props => props.theme.mainText};
     border-radius: 12px;
@@ -68,6 +70,28 @@ export const SectionInfo = styled.section`
         margin-left: 8px;
         margin-bottom: 8px;
         font-weight: normal;
+    }
+`
+
+export const SectionMoves = styled.section`
+    width: 100%;
+    text-align: center;
+
+    .movesContainer {
+        display: flex;
+        justify-content: center;
+    }
+
+    ul {
+        list-style: none;
+        column-count: 6;
+        column-gap: 24px;
+        padding: 12px;
+    }
+
+    li {
+        margin: 8px;
+        break-inside: avoid;
     }
 `
 
