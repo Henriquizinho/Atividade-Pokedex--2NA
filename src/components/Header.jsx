@@ -19,10 +19,10 @@ function Header({ setSearch }) {
 
     return (
         <S.HeaderContainer>
-            <div className="sidebar"><a href='#'><img src={PokeballIcon} width={50} height={50} /></a></div>
+            <div className="sidebar"><img src={PokeballIcon} width={50} height={50} /></div>
             <div className="topbar" />
             <S.Navigation>
-                <Link to='/'><TiHome /> Página Inicial</Link>
+                <Link to='/'><TiHome /> Home</Link>
                 <S.RightMenu>
                     <S.SearchBar>
                         <div className="iconSearch"><IoSearchSharp /></div>
