@@ -24,6 +24,7 @@ export const BodyContainer = styled.div`
         font-weight: bold;
         margin-bottom: 12px;
         text-align: center;
+        margin-bottom: 12px;
     }
 `
 
@@ -39,11 +40,43 @@ export const NavPokemon = styled.div`
     }
 `
 
+export const SectionDetails = styled.section`
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+`
+
+export const SectionInfo = styled.section`
+    min-width: 280px;
+    border: 2px solid ${props => props.theme.mainText};
+    border-radius: 12px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+
+    ul {
+        list-style: none;
+        font-size: 16px;
+        margin-left: 12px;
+        font-weight: bold;
+    }
+
+    li {
+        margin-left: 8px;
+        margin-bottom: 8px;
+        font-weight: normal;
+    }
+`
+
 export const Type = styled.div`
     text-transform: uppercase;
     margin-top: 12px;
     display: flex;
     gap: 12px;
+    align-self: center;
 
 
     .type{
@@ -162,4 +195,4 @@ export const Loader = styled.div`
         transform: rotate(90deg);
     }
     }
-    `
+`

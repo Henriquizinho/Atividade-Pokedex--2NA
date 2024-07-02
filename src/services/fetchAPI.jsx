@@ -11,7 +11,7 @@ export const fetchPokemons = async () => {
         return pokemonDetails
 
     } catch (error) {
-        console.error("Erro ao buscar dados:", error);
+        console.error("Error fetching pokemons data:", error);
         return null
     }
 }
@@ -23,7 +23,19 @@ export const fetchPokemonDetailed = async (id) => {
 
         return data
     } catch (error) {
-        console.error("Erro ao buscar dados:", error);
+        console.error("Error fetching details data:", error);
         return null
+    }
+}
+
+export const fetchAbilityData = async (url) => {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        return data;
+    } catch (error) {
+        console.error('Error fetching ability data:', error);
+        return null;
     }
 }
