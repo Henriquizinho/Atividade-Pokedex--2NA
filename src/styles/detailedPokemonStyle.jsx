@@ -73,28 +73,6 @@ export const SectionInfo = styled.section`
     }
 `
 
-export const SectionMoves = styled.section`
-    width: 100%;
-    text-align: center;
-
-    .movesContainer {
-        display: flex;
-        justify-content: center;
-    }
-
-    ul {
-        list-style: none;
-        column-count: 6;
-        column-gap: 24px;
-        padding: 12px;
-    }
-
-    li {
-        margin: 8px;
-        break-inside: avoid;
-    }
-`
-
 export const Type = styled.div`
     text-transform: uppercase;
     margin-top: 12px;
@@ -177,6 +155,43 @@ export const Type = styled.div`
 
     .flying {
         background-color: #89AAE3;
+    }
+`
+
+
+export const SectionMoves = styled.section`
+    width: 100%;
+    text-align: center;
+
+    .movesContainer {
+        display: flex;
+        justify-content: center;
+    }
+
+    ul {
+        list-style: none;
+        column-count: 5;
+        column-gap: 24px;
+        padding: 12px;
+
+        @media(max-width: 1300px) {
+            column-count: 3;
+        }
+
+        @media(max-width: 1000px) {
+            column-count: 2;
+        }
+
+        @media(max-width: 720px) {
+            column-count: 1;
+        }
+    }
+
+    li {
+        margin: 8px;
+        background-color: ${props => props.theme.secondaryBG};
+        border-radius: 8px;
+        padding: 4px;
     }
 `
 
