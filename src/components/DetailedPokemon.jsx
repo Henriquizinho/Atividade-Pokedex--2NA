@@ -100,7 +100,6 @@ function DetailedPokemon() {
                     <div className="movesContainer">
                         <ul>
                             {pokemon.moves.map((element, index) => {
-                                console.log(element);
                                 return (
                                     <li key={index}>{capitalizeFirstLetter(element.move.name)}</li>
                                 )

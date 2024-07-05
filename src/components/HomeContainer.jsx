@@ -58,11 +58,12 @@ function HomeContainer() {
                         </Link >
                     ))}
                 </div>
-                <S.LoadButton
-                    onClick={() => setQuantity(quantity + 10)}
-                    disabled={quantity === 150}>
-                    {quantity === 150 ? 'Sem mais pokémons' : 'Carregar +'}
-                </S.LoadButton>
+
+                {(quantity < 150 && search === '') && (
+                    <S.LoadButton onClick={() => setQuantity(quantity + 10)}>
+                        Carregar +
+                    </S.LoadButton>
+                )}
             </main>
 
             <ScrollButton />

@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import * as S from '../styles/headerStyle'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import { TiHome } from "react-icons/ti";
 import { IoSearchSharp } from "react-icons/io5";
@@ -11,6 +11,9 @@ import { ThemeContext } from '../contexts/ThemeContext'
 
 
 function Header({ setSearch }) {
+    const location = useLocation();
+    const showSearch = location.pathname === '/'
+
     const handleInputSearch = (e) => {
         setSearch(e.target.value)
     }
@@ -24,10 +27,10 @@ function Header({ setSearch }) {
             <S.Navigation>
                 <Link to='/'><TiHome /> Home</Link>
                 <S.RightMenu>
-                    <S.SearchBar>
+                {showSearch && <S.SearchBar>
                         <div className="iconSearch"><IoSearchSharp /></div>
                         <input type="text" name="search" placeholder='Digite o nome' onChange={handleInputSearch}/>
-                    </S.SearchBar>
+                    </S.SearchBar>}
                     <S.SwitchButton>
                         <input type="checkbox" onChange={toggleTheme}/>
                         <span className="slider" />
