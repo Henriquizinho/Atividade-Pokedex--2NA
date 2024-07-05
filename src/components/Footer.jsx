@@ -8,7 +8,7 @@ function Footer() {
         <S.Footer>
             <img src={ColorDots} />
             <div>
-            Design e Código feito por: <a href="https://github.com/guiisbarbosa" target='_blank'>Guilherme Barbosa</a>
+            Designed and coded with care by: <a href="https://github.com/guiisbarbosa" target='_blank'>Guilherme Barbosa</a>
             </div>
         </S.Footer>
     )

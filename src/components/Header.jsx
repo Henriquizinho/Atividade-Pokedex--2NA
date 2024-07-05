@@ -29,7 +29,7 @@ function Header({ setSearch }) {
                 <S.RightMenu>
                 {showSearch && <S.SearchBar>
                         <div className="iconSearch"><IoSearchSharp /></div>
-                        <input type="text" name="search" placeholder='Digite o nome' onChange={handleInputSearch}/>
+                        <input type="text" name="search" placeholder='Search by name' onChange={handleInputSearch}/>
                     </S.SearchBar>}
                     <S.SwitchButton>
                         <input type="checkbox" onChange={toggleTheme}/>

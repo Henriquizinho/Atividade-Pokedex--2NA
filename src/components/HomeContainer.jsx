@@ -46,7 +46,7 @@ function HomeContainer() {
     return (
         <S.BodyContainer>
             <main>
-                <h1>Pokémons 1ª Geração</h1>
+                <h1>Pokémons 1st Generation</h1>
                 <div className="displayCards">
                     {limitedPokemons.map((pokemon, index) => (
                         <Link to={`/pokemon/${pokemon.id}`} key={index} >

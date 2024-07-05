@@ -60,9 +60,9 @@ function DetailedPokemon() {
             <main>
 
                 <S.NavPokemon>
-                    {id == 1 ? <div></div> : <Link to={`/pokemon/${id <= 1 ? pokemon.id : pokemon.id - 1}`}><FaArrowLeft size={8} /> Pokémon Anterior</Link>}
+                    {id == 1 ? <div></div> : <Link to={`/pokemon/${id <= 1 ? pokemon.id : pokemon.id - 1}`}><FaArrowLeft size={8} /> Previous Pokémon</Link>}
 
-                    {id == 151 ? <div></div> : <Link to={`/pokemon/${id >= 151 ? pokemon.id : pokemon.id + 1}`}>Próximo Pokémon <FaArrowRight size={8} /></Link>}
+                    {id == 151 ? <div></div> : <Link to={`/pokemon/${id >= 151 ? pokemon.id : pokemon.id + 1}`}>Next Pokémon <FaArrowRight size={8} /></Link>}
 
 
                 </S.NavPokemon>

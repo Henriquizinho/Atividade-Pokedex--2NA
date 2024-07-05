@@ -1,5 +1,9 @@
 # Pokédex React Application
 
+A inpiração para o Layout foi a própria Pokedex exibida nos animes do Pokémon.
+
+<img src="https://fevgames.net/wp-content/uploads/2015/09/Pokemon-GO-Pokedex.png" alt="Pokédex Screenshot" width="400">
+
 ## Descrição
 
 Esta aplicação é uma Pokédex interativa desenvolvida em ReactJS que consome a API do [PokeAPI](https://pokeapi.co/). Seu principal propósito é permitir aos usuários visualizar uma listagem de Pokémons e obter informações detalhadas sobre cada um, como habilidades, tipos e movimentos.
