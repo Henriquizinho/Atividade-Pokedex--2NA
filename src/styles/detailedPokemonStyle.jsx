@@ -26,6 +26,12 @@ export const BodyContainer = styled.div`
         text-align: center;
         margin-bottom: 12px;
     }
+
+    @media(max-width: 376px){
+        main {
+            width: 90%;
+        }
+    }
 `
 
 export const NavPokemon = styled.div`
